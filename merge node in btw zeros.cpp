@@ -27,31 +27,3 @@ public:
         return dummy->next;
     }
 };
-
-int main() {
-    Solution sol;
-    
-    // Test case: Create linked list 0->1->2->3->0->4->5->0
-    ListNode* head = new ListNode(0);
-    head->next = new ListNode(1);
-    head->next->next = new ListNode(2);
-    head->next->next->next = new ListNode(3);
-    head->next->next->next->next = new ListNode(0);
-    head->next->next->next->next->next = new ListNode(4);
-    head->next->next->next->next->next->next = new ListNode(5);
-    head->next->next->next->next->next->next->next = new ListNode(0);
-    
-    // Call mergeNodes
-    ListNode* result = sol.mergeNodes(head);
-    
-    // Print result
-    cout << "Result: ";
-    ListNode* current = result;
-    while(current) {
-        cout << current->val << " ";
-        current = current->next;
-    }
-    cout << endl;
-    
-    return 0;
-}
