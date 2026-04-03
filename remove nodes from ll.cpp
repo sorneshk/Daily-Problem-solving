@@ -12,14 +12,6 @@ using namespace std;
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
 class Solution {
 public:
     ListNode* rev(ListNode* head){
@@ -54,28 +46,3 @@ public:
         return ans;
     }
 };
-
-int main() {
-    Solution sol;
-    
-    // Test case: Create linked list 5->2->13->3->8
-    ListNode* head = new ListNode(5);
-    head->next = new ListNode(2);
-    head->next->next = new ListNode(13);
-    head->next->next->next = new ListNode(3);
-    head->next->next->next->next = new ListNode(8);
-    
-    // Call removeNodes
-    ListNode* result = sol.removeNodes(head);
-    
-    // Print result
-    cout << "Result: ";
-    ListNode* current = result;
-    while(current) {
-        cout << current->val << " ";
-        current = current->next;
-    }
-    cout << endl;
-    
-    return 0;
-}
